@@ -1,7 +1,6 @@
 flask
-dotenv
+python-dotenv
 flask_sqlalchemy
 flask_migrate
 sqlalchemy
 request
-find_dotenv
