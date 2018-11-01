@@ -3,4 +3,4 @@ python-dotenv
 flask_sqlalchemy
 flask_migrate
 sqlalchemy
-request
+requests
