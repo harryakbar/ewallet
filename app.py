@@ -81,6 +81,8 @@ def get_saldo():
             return jsonify({'saldo': user.saldo})
     except exc.SQLAlchemyError:
         return jsonify({'saldo': -4})
+    except Exception:
+        return jsonify({'transferReturn': -99})
 
 @app.route('/ewallet/getTotalSaldo', methods=['POST'])
 def get_total_saldo():
@@ -113,8 +115,8 @@ def get_total_saldo():
                 return jsonify({'saldo': sum})
     except requests.exceptions.ConnectionError:
         return jsonify({'saldo': -3})
-    # except Exception:
-    #     return jsonify({'saldo': -99})
+    except Exception:
+        return jsonify({'saldo': -99})
 
 @app.route('/ewallet/transfer', methods=['POST'])
 def transfer():
