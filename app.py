@@ -23,7 +23,7 @@ from model import User
 
 def check_quorum():
     active_quorums = []
-    list = json.load(open('list_dummy.json'))
+    list = json.load(open('list.json'))
     count_active_quorum = 0
     total_quorum = len(list)
     # return list, 1

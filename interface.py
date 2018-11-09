@@ -1,6 +1,6 @@
 import requests
 
-URL = 'http://127.0.0.1:80'
+URL = 'http://host1506689080.sisdis.infralabs.cs.ui.ac.id'
 def main():
     main_menu()
     while True:
@@ -30,7 +30,7 @@ def getSaldo():
             print(r.text)
     except Exception:
         print(Exception)
-
+   
 def getTotalSaldo():
     user_id = str(raw_input('Masukkan user_id (nomor saja, cth. 1506689080): '))
     try:
@@ -52,6 +52,7 @@ def register():
     user_id = str(raw_input('Masukkan user_id (nomor saja, cth. 1506689080): '))
     nama = str(raw_input('Masukkan nama (nomor saja, cth. harry): '))
     try:
+        print('{}/ewallet/register'.format(URL))
         r = requests.post('{}/ewallet/register'.format(URL), json={"user_id": user_id, "nama": nama})
         print(r.text)
     except Exception:
